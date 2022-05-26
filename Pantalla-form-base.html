@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .main {
+        margin-top: 20px
+    }
+
+    .container {
+        background-color: #dddddd;
+        margin: auto;
+        padding: 20px;
+        border: 1px sold #000;
+        border-radius: 5px;
+        width: 60%;
+    }
+
+    .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+    }
+
+    .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+    }
+
+    /* Clear floats after the columns */
+    .row::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    label {
+        padding: 12px 12px 12px 8px;
+        display: inline-block;
+    }
+
+    .header {
+        background-color: #04AA6D;
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    input[type=text],
+    select,
+    textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+
+    input[type=submit] {
+        background-color: #04AA6D;
+        color: white;
+        padding: 12px 20px;
+        margin-top: 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+    }
+
+    input[type=submit]:hover {
+        background-color: #6dea73;
+    }
+
+    /* Diseño receptivo: cuando la pantalla tiene menos de 600 px de ancho, las dos columnas se apilan una encima de la otra en lugar de una al lado de la otra */
+    @media screen and (max-width: 600px) {
+
+        .col-25,
+        .col-75,
+        input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+</style>
+<head>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <form action="https://disneyparks.disney.go.com/es/">
+                <div>
+                    <div class="row">
+                        <label for="fname" class="header">Datos del Cliente</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">Nombre</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="fname" name="fname" placeholder="Ingrese su nombre...">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="lname">Apellido</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="lname" name="lname" placeholder="Ingrese su apellido...">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="country">País</label>
+                        </div>
+                        <div class="col-75">
+                            <select name="country" id="country">
+                                <option value="0">Seleccione...</option>
+                                <option value="1">Argentina</option>
+                                <option value="2">Brasil</option>
+                                <option value="3">Colombia</option>
+                                <option value="4">Panamá</option>
+                                <option value="5">Venezuela</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="subject">Asunto</label>
+                        </div>
+                        <div class="col-75">
+                            <textarea name="subject" id="subject" cols="30" rows="10"
+                                placeholder="Agregar mensaje..."></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Enviar">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
